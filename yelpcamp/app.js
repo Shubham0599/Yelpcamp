@@ -8,7 +8,7 @@ app.use(bodyPaser.urlencoded({extended:true}));
 var camps=[
     {name:"Mount seam",url:"https://www.photosforclass.com/download/px_1061640"},
     {name:"Walt diseny",url:"https://www.photosforclass.com/download/px_6757"},
-    {name:"Dafer fort",url:"https://www.photosforclass.com/download/px_2662816"},
+    {name:"Dafer Fort",url:"https://www.photosforclass.com/download/px_2662816"},
     {name:"Mount seam",url:"https://www.photosforclass.com/download/px_2662816"}
    
 ]
