@@ -53,7 +53,8 @@ app.get("/camp",(req,res)=>{
 app.post("/camp",(req,res)=>{
     var title=req.body.title;
     var url=req.body.url;
-    var newobj={name:title,url:url}
+    var des=req.body.description;
+    var newobj={name:title,url:url,description:des}
    Campground.create(newobj,(err,cam)=>{
        if(err)console.log(err)
        else res.redirect("/camp")
