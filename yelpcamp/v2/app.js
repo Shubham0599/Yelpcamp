@@ -12,21 +12,25 @@ useNewUrlParser: true,
 //schema 
 var campschema=new mongoose.Schema({
     name:String,
-    url:String
+    url:String,
+    description:String
 });
 //model
 var Campground=mongoose.model("Campground",campschema);
 
 // Campground.create({
 //     name:"Grey Hill",
-//     url:"https://www.photosforclass.com/download/px_6757"
+//     url:"https://www.photosforclass.com/download/px_6757",
+//     description:"Most of the parts is grey ,Therefore it's Grey Hill"
 // },function(err,camp){
 //     if(err)console.log(err);
 //     else console.log(`New Campground:${camp}`);
 // });
+
 // Campground.find({},(err,camp)=>{if(err)console.log(err)
 // else console.log(camp)
 // });
+
 
 app.set("view engine","ejs");
 app.use(bodyPaser.urlencoded({extended:true}));
@@ -57,6 +61,12 @@ app.post("/camp",(req,res)=>{
    
 })
 
+app.get("/camp/:id",(req,res)=>{
+    Campground.findById(req.params.id,(err,camp)=>{
+        if(err)console.log(err)
+        else res.render("show",{pass:camp})
+    })
+})
 
 app.listen(3000,(req,res)=>{
     console.log("App is running!!");

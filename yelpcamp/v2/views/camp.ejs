@@ -16,8 +16,9 @@
 <%data.forEach(function(x){%>
     <div class="col-md-4 col-sm-6" >
         <div class="img-thumbnail">
-            <img src="<%=x.url%>" class="img-fluid" s>
+            <img src="<%=x.url%>" class="img-fluid" >
             <h3><srtong><%=x.name%></srtong></h3>
+            <a href="/camp/<%=x._id%>" class="btn btn-primary">Info</a>
         </div>
         
     </div>
